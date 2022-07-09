@@ -1,0 +1,99 @@
+@use "../../styles/_util" as *
+    
+.container
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 100px
+    width: 100vw
+    box-shadow: -10px 6px 20px -20px #000000
+    padding: 2rem
+    background: $white
+    position: fixed
+    z-index: 100
+    top: 0
+    .logo
+
+        img
+            width: 50px
+    
+    .menu
+        display: flex
+        align-items: center
+        gap: 1rem
+        
+        button
+            display: flex
+            align-items: center
+            color: white
+            height: 40px
+            border-radius: .5rem
+            padding: 1rem
+            font-weight: bold
+            gap: .5rem
+            &:nth-child(1)
+                background: $blue-100
+            &:nth-child(2)
+                background: $purple-100
+
+
+            transition: 0.2s ease-in-out
+            &:hover
+                
+                filter: brightness(0.8)
+
+        
+        input
+            height: 40px
+            border-bottom-left-radius: .5rem
+            border-top-left-radius: .5rem
+            border:0
+            padding: 1rem
+            box-shadow: -10px 1px 23px -15px #000000
+
+    .search
+        margin-right: 3rem
+        svg
+            background: $purple-100
+            color: $white
+            height:40px
+            width: 40px
+            padding: .5rem
+            position: absolute
+            border-top-right-radius: .5rem
+            border-bottom-right-radius: .5rem
+            cursor: pointer
+
+            transition: 0.2s ease-in-out
+            &:hover
+                filter: brightness(0.8)
+
+    .notification
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: center
+        
+        transition: 0.2s ease-in-out
+        &:hover 
+            filter: brightness(0.8)
+        span
+            position: absolute
+            padding: 0 4px
+            background-image: linear-gradient($green-500, $green-100)
+            border-radius: 5rem
+            color: $white
+            font-size: .9rem
+            top:-5px
+            left: -5px
+        svg
+            font-size: 1.6rem
+            cursor: pointer
+
+            
+       
+
+        &:nth-child(4)
+            color: $green-500
+        &:nth-child(5)
+            color: $blue-500

@@ -1,0 +1,152 @@
+@use "../../styles/_util" as *
+    
+.container
+    width: 100%
+    height: 100%
+   
+    .center
+        width: 100%
+        display: flex
+        margin-top: 100px
+        
+        .sidebar
+           height: 100%
+
+        .content    
+            width: 100%
+            height: 100%
+            padding: 2rem
+            display: flex
+            justify-content: center
+            
+            .limit
+                display: flex
+                flex-direction: column
+                width: 100%
+                max-width:1500px
+                gap: 3rem
+                margin-left: 250px
+                .cards
+                    width: 100%
+                    display: flex
+                    gap: 3rem
+                    justify-content: center
+            
+                    .cardFinal
+                        flex:1
+                        height: 100px
+                        background: $white
+                        padding: 1rem
+                        border: 1px solid $gray-100
+
+                .page 
+                    display: flex
+                    gap: 1rem
+                    .statisticsContainer
+                        padding: 1rem
+                        display: flex
+                        flex-direction: column
+                        border: 1.5px solid $gray-100
+                        border-radius: 1rem
+                        gap: 1rem
+                        flex: 2
+
+                        h3
+                            color: $gray-200
+
+                        .statisticsCards
+                            display: flex
+                            gap: 1rem
+                           
+                           
+
+                            .statisticsCard
+                                display: flex
+                                flex-direction: column
+                                justify-content: center
+                                align-items: center
+                                height: 100px
+                                flex: 2
+                                box-shadow: 0px 1px 23px -15px #000000
+
+                                border-radius: 1rem
+                                svg
+                                    font-size: 2rem
+                                
+                                &:nth-child(1)
+                                    svg
+                                        color: $green-100
+                                &:nth-child(2)
+                                    svg
+                                        color: $red-100
+                                &:nth-child(3)
+                                    svg
+                                        color: $blue-100
+                                &:nth-child(4)
+                                    svg
+                                        color: $purple-100
+                                
+                                span
+                                    font-size: .8rem
+                        .reportsContainer
+                            display: flex
+                            flex-direction: column
+                            gap: 2rem
+
+                        .panels
+                            display: flex
+                            gap: 2rem
+                            .panel
+                                border: 1px solid $gray-100
+                                flex:1
+                                border-radius: 2rem
+                                display: flex
+                                flex-direction: column
+                                gap: 2rem
+                                .header
+                                    display: flex
+                                    justify-content: space-between
+                                    h4
+                                        color: $gray-200
+                                    input
+                                        width: 100px
+                                        border-radius: 100px
+                                        border: 1px solid $black
+                                        padding: .2rem 1rem
+
+                                .typeProducts
+                                    display: flex
+                                    justify-content: space-between
+                                    padding: 0 1rem
+
+                                .listProducts
+                                    padding: 0 1rem
+                                    max-height: 300px
+                                    overflow: auto
+
+                                .listClients
+                                    display: flex
+                                    flex-direction: column
+                                    max-height: 300px
+                                    overflow: auto
+                                    gap: .5rem
+                                    
+
+                    .reminder
+                        border: 1.5px solid $gray-100
+                        flex: 1
+                        padding: 1rem
+                        color: $gray-200
+                        border-radius: 1rem
+                    .panel
+                        border: 1.5px solid $gray-100
+                        flex: 1
+                        padding: 1rem
+                        border-radius: 1rem
+                        h3
+                            color: $gray-200
+
+                        .header
+                            
+                    
+                    

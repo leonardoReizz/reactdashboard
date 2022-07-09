@@ -1,0 +1,60 @@
+
+@use "../../styles/_util" as *    
+.client
+    display: flex
+    justify-content: space-between
+    border-radius: 1rem
+    background-image: linear-gradient($red-light, $white)
+    padding: .5rem
+    .img
+        img
+            width: 50px
+            border-radius: 1rem 
+    .details
+        display: flex
+        flex-direction: column
+        span
+            font-size: .6rem
+    .buttons
+        display: flex
+        gap: .5rem
+        .buttonGroup
+            display: flex
+            flex-direction: column
+            justify-content: space-around
+            gap: .5rem
+            div
+                display: flex
+                justify-content: space-around
+                button
+                    background: transparent
+                    color: $white
+                    svg
+                        font-size: .8rem
+
+                    &:hover
+                        background: $gray-100
+                    &:nth-child(1)
+                        svg
+                            color: $purple-100
+                    &:nth-child(2)
+                        svg
+                            color: $red-100
+                    
+            button
+                display: flex
+                gap: .2rem
+                align-items: center
+                background-image: linear-gradient(to right,$cyan-100,$green-light)
+                padding:  .3rem .3rem
+                font-size: .5rem
+                border-radius: 5rem
+
+                transition: 0.2s 
+
+                &:hover
+                    filter: brightness(0.8)
+                svg
+                    font-size: .9rem
+                    color: $purple-100
+                                                
