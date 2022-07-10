@@ -7,4 +7,9 @@ As 'datas' dos componentes encontram-se de forma estatis na pas utils.
 
 
 
+![dashboard](https://user-images.githubusercontent.com/76044304/178128672-66f66ca6-f5fc-4a70-a41c-39b51f16d6dc.gif)
+
+
+
+
 
