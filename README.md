@@ -5,7 +5,7 @@ Bom este é um projeto de um Dashboard utilizando React, no momento o projeto ai
 Utilizei neste projeto: React, Typescript, Recharts, SASS <br/>
 As 'datas' dos componentes encontram-se de forma estatis na pas utils.
 
-Voce pode acessar em: [http://localhost:3000](https://reactdashboard-sandy.vercel.app)
+Voce pode acessar em: https://reactdashboard-sandy.vercel.app
 
 
 
