@@ -1,0 +1,30 @@
+@use "../../styles/_util" as *
+    
+.email
+    display: flex
+    gap: .5rem
+    img
+        width: 50px
+        height: 50px
+        border-radius: 5rem
+    .details
+        h4
+            font-size: .9rem
+        span
+            font-size: .8rem
+    .actions
+        display: flex
+        gap: .5rem
+        svg
+            cursor: pointer
+            border-radius: 5rem
+            font-size: 1.8rem
+            padding: .3rem
+
+            transition: 0.2s 
+            &:nth-child(1)
+                color: $green-100
+            &:nth-child(2)
+                color: $purple-100    
+            &:hover
+                background: $gray-100

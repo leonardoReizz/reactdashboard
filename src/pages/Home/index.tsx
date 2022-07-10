@@ -3,16 +3,31 @@ import { Cards } from "../../components/Cards";
 import { Navbar } from "../../components/Navbar";
 import { ReportsCharts } from "../../components/ReportsCharts";
 import { Sidebar } from "../../components/Sidebar";
+import  Calendar  from "react-calendar";
+
+import { ProductItem } from "../../components/ProductItem";
+import { ClientItem } from "../../components/ClientItem";
+import {  ReminderItem } from "../../components/ReminderItem";
+import { EmailBoxItem } from "../../components/EmailBoxItem";
+import { AdminItem } from "../../components/AdminItem";
+
+import { dataClient } from "../../utils/dataClient";
+import { dataAdmin } from "../../utils/dataAdmin";
+import { dataReminder } from "../../utils/dataReminder";
+import { dataEmail } from "../../utils/dataEmail";
+
+
 import styles from "./styles.module.sass";
+import 'react-calendar/dist/Calendar.css';
+
 
 import PersonIcon from '@mui/icons-material/Person';
 import MoodBadIcon from '@mui/icons-material/MoodBad';
 import SendIcon from '@mui/icons-material/Send';
 import StoreIcon from '@mui/icons-material/Store';
-import { ItemProductList } from "../../components/ItemProductList";
-import { ItemClientList } from "../../components/ItemClientList";
+import { dataProduct } from "../../utils/dataProducts";
 
-
+import sunImg from "../../assets/sunImg.png";
 
 
 export function Home(){
@@ -31,7 +46,15 @@ export function Home(){
                                 <Cards/>
                                 <Cards/>
                                 <div className={styles.cardFinal}>
-                                    <h4>Total Growth</h4>
+                                    <div className={styles.cardFinalImg}>
+                                        <img src={sunImg} alt="" />
+                                        32°
+                                    </div>
+                                    <div className={styles.cardFinalDetails}>
+                                       <h4> <span>Sunny Day</span> 12:30Pm </h4>
+                                       <p>Poin faucibus luctus felis et ornare.</p>
+                                       <p>Nunc indiam sed purus maximus molestie.</p>
+                                    </div>
                                 </div>
                             </div>
 
@@ -75,10 +98,13 @@ export function Home(){
                                                 <span>Price</span>
                                             </div>
                                             <div className={styles.listProducts}>
-                                                <ItemProductList/>
-                                                <ItemProductList/>
-                                                <ItemProductList/>
-                                                <ItemProductList/>
+                                                {
+                                                    dataProduct.map((product)=>{
+                                                       return(
+                                                        <ProductItem product={product}/>
+                                                       )
+                                                    })
+                                                }
                                             </div>
                                         </div>
                                         <div className={styles.panel}>
@@ -87,21 +113,72 @@ export function Home(){
                                                 <input type="text" />
                                             </div>
                                             <div className={styles.listClients}>
-                                                <ItemClientList/>
-                                                <ItemClientList/>
-                                                <ItemClientList/>
-                                                <ItemClientList/>
-                                                <ItemClientList/>
+                                                {
+                                                dataClient.map((client)=>{
+                                                    return(
+                                                        <ClientItem client={client}/>
+                                                    )
+                                                })
+                                                }
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 
-                                <div className={styles.reminder}>
-                                    <h3>Todays Reminder</h3>
+                                <div className={styles.notifications}>
+                                    <div className={styles.reminder}>
+                                        <h3>Todays Reminder</h3>
+                                        {
+                                            dataReminder.map((item)=>{
+                                                return (
+                                                    <ReminderItem item={item}/>
+                                                )
+                                            })
+                                        }
+                                    </div>
+                                    <div className={styles.emailBox}>
+                                        <h3>Emails</h3>
+                                        {
+                                            dataEmail.map((email)=>{
+                                                return (
+                                                    <EmailBoxItem email={email}/>
+                                                )
+                                            })
+                                        }
+                                    </div>
                                 </div>
                                 <div className={styles.panel}>
-                                    <h3> Admin Panel</h3>
+                                    <div className={styles.admins}>
+                                        <h3> Admin Profile </h3>
+                                        <div className={styles.centerAdmin}>
+                                            <div className={styles.admin}>
+                                                {
+                                                    dataAdmin.map((admin)=>{
+                                                        return (
+                                                            <AdminItem admin={admin}/>
+                                                        )
+                                                    })
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className={styles.calendar}>
+                                        <h3>Calendar</h3>
+                                        <Calendar className={styles.reactCalendar}/>
+                                    </div>
+                                    <div className={styles.completedDelivery}>
+                                        <h3>Today's Completed Delivery</h3>
+                                        <div>
+                                            {
+                                                dataEmail.map((email)=>{
+                                                    return (
+                                                        <img src={email.imgUrl} alt="Profile Picture" />
+                                                    )
+                                                })
+                                            }
+                                            <span> +450 </span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

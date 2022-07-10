@@ -7,18 +7,29 @@ import CloseIcon from '@mui/icons-material/Close';
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
 
-export function ItemClientList(){
+
+interface ClientItemProps{
+    client:{
+        imgUrl: string
+        country: string
+        mobileNumber: string
+        email: string
+        name: string
+    }
+}
+
+export function ClientItem({client}:ClientItemProps){
     return (
         <>
             <div className={styles.client}>
                 <div className={styles.img}>
-                    <img src="https://conteudo.imguol.com.br/c/entretenimento/d5/2020/10/07/homem-com-vergonha-1602098705397_v2_450x450.jpg" alt="" />
+                    <img src={client.imgUrl} alt="Profile Picture" />
                 </div>
                 <div className={styles.details}>
-                    <h5>Margaret P. Forte</h5>
-                    <span>United States</span>
-                    <span>Mobile - 012.345.6789</span>
-                    <span>yourmail@anymail.com</span>
+                    <h5>{client.name}</h5>
+                    <span>{client.country}</span>
+                    <span>Mobile - {client.mobileNumber}</span>
+                    <span>{client.email}</span>
                 </div>
                 <div className={styles.buttons}>
                     <div className={styles.buttonGroup}>
