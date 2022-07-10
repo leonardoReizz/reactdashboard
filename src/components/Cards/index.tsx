@@ -2,8 +2,14 @@
 import { Line, LineChart, ResponsiveContainer } from "recharts";
 import styles from "./styles.module.sass";
 
-
-export function Cards(){
+interface CardsProps{
+    dataCard: {
+        title: string,
+        total: string,
+        percentage: string,
+    }
+}
+export function Cards({dataCard}: CardsProps){
     const data = [
         {
           name: 'Page A',
@@ -52,11 +58,11 @@ export function Cards(){
         <>
             <div className={styles.card}>
                 <div>
-                    <h4>Total Revenue</h4>
+                    <h4>{dataCard.title}</h4>
                     <div className={styles.cardContent}>
                         <div>
-                            <h5>1.3M</h5>
-                            <span>40.8%</span>
+                            <h5>{dataCard.total}</h5>
+                            <span>{dataCard.percentage}</span>
                         </div>
                         <div className={styles.charts}>
                             <ResponsiveContainer width="100%" height="100%">

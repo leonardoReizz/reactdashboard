@@ -28,6 +28,7 @@ import StoreIcon from '@mui/icons-material/Store';
 import { dataProduct } from "../../utils/dataProducts";
 
 import sunImg from "../../assets/sunImg.png";
+import { dataCards } from "../../utils/dataCards";
 
 
 export function Home(){
@@ -42,9 +43,13 @@ export function Home(){
                     <div className={styles.content}>
                         <div className={styles.limit}>
                             <div className={styles.cards}>    
-                                <Cards/>
-                                <Cards/>
-                                <Cards/>
+                                {
+                                    dataCards.map((data)=>{
+                                        return (
+                                            <Cards dataCard={data}/>
+                                        )
+                                    })
+                                }
                                 <div className={styles.cardFinal}>
                                     <div className={styles.cardFinalImg}>
                                         <img src={sunImg} alt="" />
